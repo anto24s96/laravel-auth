@@ -20,7 +20,7 @@
                         </h5>
                         <div class="card-text"> Data Inizio: {{ $project['start_date'] }}</div>
                         <div class="card-text"> Data Fine: {{ $project['end_date'] }}</div>
-                        <div class="card-text py-2"> Descrizione {{ $project['description'] }}</div>
+                        <div class="card-text py-2"> Descrizione: {{ $project['description'] }}</div>
                         <div class="card-text">Slug: {{ $project['slug'] }}</div>
                     </div>
                 </div>

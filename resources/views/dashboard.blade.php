@@ -18,7 +18,12 @@
                         @endif
 
                         {{ __('You are logged in!') }}
-                        <a href="{{ route('admin.project.index') }}" class="btn btn-danger">Show Project</a>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="{{ route('admin.project.index') }}"
+                            class="btn btn-danger d-inline-block my-3 fw-bolder text-uppercase">Show
+                            Project</a>
                     </div>
                 </div>
             </div>
