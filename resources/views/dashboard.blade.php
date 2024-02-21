@@ -18,7 +18,7 @@
                         @endif
 
                         {{ __('You are logged in!') }}
-                        <a href="" class="btn btn-danger"></a>
+                        <a href="{{ route('admin.project.index') }}" class="btn btn-danger">Show Project</a>
                     </div>
                 </div>
             </div>
