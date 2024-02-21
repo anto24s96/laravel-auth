@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
             $new_project = new Project;
             $new_project->name = $faker->words(3, true);
             $new_project->description = $faker->paragraph(3, true);
-            $new_project->star_date = $faker->date();
+            $new_project->start_date = $faker->date();
             $new_project->end_date = $faker->date();
             $new_project->slug = Str::slug($new_project->name, '_');
             $new_project->save();

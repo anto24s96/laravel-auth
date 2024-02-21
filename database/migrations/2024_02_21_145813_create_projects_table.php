@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('logo')->nullable();
             $table->text('description');
-            $table->date('star_date');
+            $table->date('start_date');
             $table->date('end_date');
             $table->string('slug');
             $table->timestamps();
