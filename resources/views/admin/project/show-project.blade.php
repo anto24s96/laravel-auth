@@ -13,15 +13,11 @@
                                 class="fa-solid fa-pen-to-square"></i></a>
                     </div>
 
-                    <div class="mx-1">
-                        <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit"class="btn btn-danger fw-bolder text-uppercase"
-                                onclick="return confirm('Sei sicuro di voler eliminare questo elemento?')">Delete <i
-                                    class="fa-solid fa-trash"></i></button>
-                        </form>
-                    </div>
+                    <button type="submit"class="btn btn-danger fw-bolder text-uppercase" data-bs-toggle="modal"
+                        data-bs-target="#modal_post_delete-{{ $project->id }}">Delete
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    @include('admin.project.delete_modal')
                 </div>
             </div>
         </div>
