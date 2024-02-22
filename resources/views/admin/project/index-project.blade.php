@@ -9,7 +9,7 @@
                     <div class="pt-3">
                         <a href="{{ route('admin.project.create') }}"
                             class="btn btn-outline-danger text-uppercase fw-bolder d-inline-block">add new
-                            project</a>
+                            project <i class="fa-solid fa-plus"></i></a>
                     </div>
                 </div>
             </div>
