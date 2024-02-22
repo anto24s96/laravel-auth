@@ -18,7 +18,7 @@
         <div class="row">
             @foreach ($projects as $project)
                 <div class="col-3 py-5">
-                    <div class="card border-5">
+                    <div class="card border-5 my-card">
                         <div class="cover_container">
                             <img src="{{ Vite::asset('resources/img/folder.png') }}" class="card-img-top rounded-0"
                                 alt="folder">

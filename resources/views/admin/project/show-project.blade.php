@@ -12,9 +12,15 @@
                             class="btn btn-warning fw-bolder text-uppercase">Edit <i
                                 class="fa-solid fa-pen-to-square"></i></a>
                     </div>
+
                     <div class="mx-1">
-                        <a href="" class="btn btn-danger fw-bolder text-uppercase">Delete <i
-                                class="fa-solid fa-trash"></i></a>
+                        <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"class="btn btn-danger fw-bolder text-uppercase"
+                                onclick="return confirm('Sei sicuro di voler eliminare questo elemento?')">Delete <i
+                                    class="fa-solid fa-trash"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -35,7 +41,6 @@
                         <div class="card-text py-2"> Descrizione: {{ $project['description'] }}</div>
                         <div class="card-text">Slug: {{ $project['slug'] }}</div>
                     </div>
-
                 </div>
             </div>
         </div>
