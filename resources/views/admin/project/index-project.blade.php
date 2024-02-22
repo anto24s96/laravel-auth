@@ -4,7 +4,14 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="py-3 fw-bolder">PROJECTS</h1>
+                <div class="d-flex align-items-center justify-content-between">
+                    <h1 class="py-3 fw-bolder">PROJECTS</h1>
+                    <div class="pt-3">
+                        <a href="{{ route('admin.project.create') }}"
+                            class="btn btn-outline-danger text-uppercase fw-bolder d-inline-block">add new
+                            project</a>
+                    </div>
+                </div>
             </div>
         </div>
 
