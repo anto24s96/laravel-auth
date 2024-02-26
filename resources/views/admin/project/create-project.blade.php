@@ -11,7 +11,7 @@
         <div class="row justify-content-center py-3">
             <div class="col-8">
                 <div class="border border-3 rounded-2 p-3 border-danger">
-                    <form action="{{ route('admin.project.store') }}" method="POST">
+                    <form action="{{ route('admin.project.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Name:</label>
@@ -24,7 +24,7 @@
 
                         <div class="mb-3">
                             <label for="logo" class="form-label">Logo:</label>
-                            <input type="text" class="form-control @error('logo') is-invalid @enderror" id="logo"
+                            <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo"
                                 name="logo" value="{{ old('logo') }}">
                             @error('logo')
                                 <div class="text-danger">{{ $message }}</div>

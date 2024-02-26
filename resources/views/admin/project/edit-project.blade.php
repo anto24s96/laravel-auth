@@ -11,7 +11,8 @@
         <div class="row justify-content-center py-3">
             <div class="col-8">
                 <div class="border border-3 rounded-2 p-3 border-danger">
-                    <form action="{{ route('admin.project.update', $project->id) }}" method="POST">
+                    <form action="{{ route('admin.project.update', $project->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -26,7 +27,10 @@
 
                         <div class="mb-3">
                             <label for="logo" class="form-label">Logo:</label>
-                            <input type="text" class="form-control @error('logo') is-invalid @enderror" id="logo"
+                            @if ($project->logo != null)
+                                <img src="{{ asset('storage/' . $project->logo) }}" alt="cover_image" class="w-25">
+                            @endif
+                            <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo"
                                 name="logo" value="{{ $project['logo'] }}">
                             @error('logo')
                                 <div class="text-danger">{{ $message }}</div>

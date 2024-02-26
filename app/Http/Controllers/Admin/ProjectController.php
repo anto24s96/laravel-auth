@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -43,6 +44,13 @@ class ProjectController extends Controller
         $form_data = $request->all();
 
         $project = new Project();
+
+        if ($request->hasFile('logo')) {
+
+            //ESEGUO L'UPLOAD DEL FILE E RECUPERO IL PATH 
+            $path = Storage::disk('public')->put('posts_image', $form_data['logo']);
+            $form_data['logo'] = $path;
+        }
 
         $project->fill($form_data);
         $slug = Str::slug($form_data['name'], '-');
@@ -86,6 +94,17 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
+        if ($request->hasFile('logo')) {
+            //SE IL POST HA UN'IMMAGINE
+            if ($project->logo != null) {
+                Storage::disk('public')->delete($project->logo);
+            }
+
+            //ESEGUO L'UPLOAD DEL FILE E RECUPERO IL PATH 
+            $path = Storage::disk('public')->put('posts_image', $form_data['logo']);
+            $form_data['logo'] = $path;
+        }
+
         $slug = Str::slug($form_data['name'], '-');
         $project->slug = $slug;
 
@@ -102,6 +121,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if ($project->logo != null) {
+            Storage::disk('public')->delete($project->logo);
+        }
+
         $project->delete();
 
         return redirect()->route('admin.project.index');

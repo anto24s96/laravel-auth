@@ -25,7 +25,6 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'name'        => 'required|max:50',
-            'logo'        => 'max:255',
             'description' => 'required',
             'start_date'  => 'required',
             'end_date'    => 'required',
@@ -37,7 +36,6 @@ class UpdateProjectRequest extends FormRequest
         return [
             'name.required'        => 'Il campo Nome deve essere obbligatorio',
             'name.max'             => 'Il campo Nome può avere al massimo 50 caratteri',
-            'logo.max'             => 'Il campo Logo può avere al massimo 255 caratteri',
             'description.required' => 'Il campo Description deve essere obbligatorio',
             'start_date.required'  => 'Il campo Inizio Data deve essere obbligatorio',
             'end_date.required'    => 'Il campo Fine Data deve essere obbligatorio',

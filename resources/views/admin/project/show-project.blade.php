@@ -26,8 +26,13 @@
             <div class="col-6">
                 <div class="card border-2 rounded-2">
                     <div class="cover_container d-flex justify-content-center">
-                        <img src="{{ Vite::asset('resources/img/folder.png') }}" class="card-img-top rounded-0 w-50"
-                            alt="folder">
+                        @if ($project->logo === null)
+                            <img src="{{ Vite::asset('resources/img/folder.png') }}" alt="folder"
+                                class="card-img-top rounded-0 w-50">
+                        @else
+                            <img src="{{ asset('storage/' . $project->logo) }}" alt="cover_image"
+                                class="card-img-top rounded-0 w-50">
+                        @endif
                     </div>
                     <div class="card-body bg-dark text-white fst-italic rounded-bottom-2">
                         <h5 class="card-title text-uppercase fw-bolder">Nome Progetto: <span>{{ $project['name'] }}</span>

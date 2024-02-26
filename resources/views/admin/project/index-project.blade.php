@@ -20,7 +20,13 @@
                 <div class="col-3 py-5">
                     <div class="card border-2 my-card rounded-2">
                         <div class="cover_container">
-                            <img src="{{ Vite::asset('resources/img/folder.png') }}" class="card-img-top" alt="folder">
+                            @if ($project->logo === null)
+                                <img src="{{ Vite::asset('resources/img/folder.png') }}" alt="folder"
+                                    class="card-img-top">
+                            @else
+                                <img src="{{ asset('storage/' . $project->logo) }}" alt="cover_image"
+                                    class="card-img-top p-3">
+                            @endif
                         </div>
                         <div class="card-body text-white text-center bg-dark rounded-bottom-2">
                             <h5 class="card-title text-center text-uppercase fw-bolder">
