@@ -24,12 +24,12 @@
 
         <div class="row justify-content-center">
             <div class="col-6">
-                <div class="card border-5">
+                <div class="card border-2 rounded-2">
                     <div class="cover_container d-flex justify-content-center">
                         <img src="{{ Vite::asset('resources/img/folder.png') }}" class="card-img-top rounded-0 w-50"
                             alt="folder">
                     </div>
-                    <div class="card-body bg-dark text-white fst-italic">
+                    <div class="card-body bg-dark text-white fst-italic rounded-bottom-2">
                         <h5 class="card-title text-uppercase fw-bolder">Nome Progetto: <span>{{ $project['name'] }}</span>
                         </h5>
                         <div class="card-text"> Data Inizio: {{ $project['start_date'] }}</div>
